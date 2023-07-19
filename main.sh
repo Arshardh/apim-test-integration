@@ -72,7 +72,9 @@ if [[ "$greppedOutput" == "0" ]]
 then
     echo "Could not start jmeter tests."
     exit 1
-fi 
+fi
+
+cat jmeter-runtime.log
 
 greppedOutput=$(cat jmeter-runtime.log | grep "Err:.*(100.00%).*" | wc -l)
 if [[ "$greppedOutput" != "0" ]]
